@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="kalkulatornapiwk.MainPage">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="WidthRequest" Value="100"/>
+            <Setter Property="BackgroundColor" Value="Beige"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+        
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Entry Placeholder="Wpisz kwotę rachunku:" Text="{Binding R_osoba}"/>
+            <Label Text="Wybierz procent napiwku:"/>
+            <Slider Maximum="30" Minimum="0" Value="{Binding Napiwek}"/>
+            <Stepper Minimum="1" Maximum="10" Value="{Binding L_osob}"/>
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Ilość osób"/>
+                <Label Text="{Binding L_osob}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Procent napiwku (w %)"/>
+                <Label Text="{Binding Napiwek}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Suma do zapłaty"/>
+                <Label Text="{Binding Message}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="10">
+                <Label Text="Kwota na osobę"/>
+                <Label Text="{Binding K_osoba}"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout Spacing="10">
+                <Button Command="{Binding ButtonShow}" Text="Oblicz"/>
+                <Button Command="{Binding ButtonClear}" Text="Wyczyść"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
